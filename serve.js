@@ -165,7 +165,7 @@ http.listen(3000, ()=>{
  */
 function makeToken(id){
   const str = SECRET_TOKEN + id;
-  return( crypto.createHash("sha1").update(str).digest('hex') );
+  return( crypto.createHash("sha512").update(str).digest('hex') );
 }
 
 /**
