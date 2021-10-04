@@ -71,8 +71,8 @@ socket.on("join-result", (data)=>{
     IAM.is_join = true;
 
     // すでにログイン中のメンバー一覧を反映
-    for(let i=0; i<data.list.length; i++){
-      const cur = data.list[i];
+    for(let value of data.list){
+      const cur = value;
       if( ! (cur.token in MEMBER) ){
         addMemberList(cur.token, cur.name);
       }
